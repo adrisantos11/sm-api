@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
+const path = require("path");
 
 const app = express();
 const port = 3000;
@@ -9,6 +10,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
 	res.type("application/json");
+	console.log(path.basename);
 	res.json({ text: "Testing Hello World! in Vercel" });
 });
 
