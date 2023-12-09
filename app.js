@@ -19,7 +19,7 @@ app.listen(port, () => {
 });
 
 app.get("/get-cv", (req, res) => {
-	let cvName = req.query.file_name;
+	let cvName = req.query.file_name || "CV_2013";
 	var file = fs.createReadStream(path.resolve("public/CV_2023.pdf"));
 	var stat = fs.statSync(path.resolve("public/CV_2023.pdf"));
 	res.setHeader("Content-Length", stat.size);
