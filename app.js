@@ -10,7 +10,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
 	res.type("application/json");
-	res.json({ text: "Testing Hello World! in Vercel", path: path.basename });
+	res.json({ holi: "Testing Hello World! in Vercel", path: __dirname });
 });
 
 app.listen(port, () => {
