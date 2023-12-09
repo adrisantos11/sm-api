@@ -7,7 +7,8 @@ const port = 3000;
 app.use(cors());
 
 app.get("/", (req, res) => {
-	res.send("Testing Hello World! in Vercel");
+	res.type("application/json");
+	res.json({ text: "Testing Hello World! in Vercel" });
 });
 
 app.listen(port, () => {
