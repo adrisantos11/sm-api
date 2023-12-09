@@ -20,8 +20,8 @@ app.listen(port, () => {
 app.get("/get-cv", (req, res) => {
 	let cvName = req.query.file_name;
 
-	var file = fs.createReadStream("./CV_2023.pdf");
-	var stat = fs.statSync("./CV_2023.pdf");
+	var file = fs.createReadStream("CV_2023.pdf");
+	var stat = fs.statSync("CV_2023.pdf");
 	res.setHeader("Content-Length", stat.size);
 	res.setHeader("Content-Type", "application/pdf");
 	res.setHeader("Content-Disposition", `attachment; filename=${cvName}.pdf`);
